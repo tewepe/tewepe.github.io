@@ -23,7 +23,7 @@
     <!--Navbar  -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#">TWP</a>
+        <a class="navbar-brand" href="#">TEWEPE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,7 +51,7 @@
     <section class="jumbotron text-center">
       <img src="img/1225.jpg" alt="Tri Widiya Putra" width="180" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Tri Widiya Putra</h1>
-      <p class="lead">Fresh Graduate System Information</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -136,7 +136,7 @@
 
     <!-- contact -->
     <section id="contact">
-      <div class="containe">
+      <div class="container">
         <div class="row text-center mb-4">
           <div class="col">
             <h2>Contact Me</h2>
@@ -194,7 +194,19 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 2, delay: 1.2, text: 'Fresh Graduate System Information' });
+      gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0 });
+      gsap.from('.navbar', { duration: 1.5, y: -100, opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
     </script>
 
     <script>
